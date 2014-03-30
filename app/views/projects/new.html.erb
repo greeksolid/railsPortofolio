@@ -1,0 +1,25 @@
+A new form has to go here
+
+	<h3>Fields</h3>
+
+	<ul>
+		<li>Project Title</li>
+		<li>Project Description</li>
+		<li>Project Images</li>
+	</ul>
+
+	<%= form_for :project, url: projects_path do |f| %>
+		<p>
+			<%= f.label :title %><br>
+			<%= f.text_field :title %>
+		</p>
+
+		<p>
+			<%= f.label :description %><br>
+			<%= f.text_area :description %>
+		</p>
+
+		<p>
+			<%= f.submit %>
+		</p>
+	<% end %>
