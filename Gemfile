@@ -7,7 +7,11 @@ gem 'rails', '4.0.2'
 # gem 'sqlite3'
 
 # Use postgres as the database for Active Record
-gem 'pg'
+# and rails_12factor to enable all heroku features
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
