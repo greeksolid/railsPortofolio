@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140505223820) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admin_users", force: true do |t|
     t.string   "fname"
     t.string   "lname"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140505223820) do
     t.datetime "updated_at"
   end
 
-  add_index "project_pictures", ["project_id"], name: "index_project_pictures_on_project_id"
+  add_index "project_pictures", ["project_id"], name: "index_project_pictures_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -58,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140505223820) do
     t.integer "technology_id"
   end
 
-  add_index "projects_technologies", ["project_id", "technology_id"], name: "index_projects_technologies_on_project_id_and_technology_id"
+  add_index "projects_technologies", ["project_id", "technology_id"], name: "index_projects_technologies_on_project_id_and_technology_id", using: :btree
 
   create_table "technologies", force: true do |t|
     t.string   "name"
