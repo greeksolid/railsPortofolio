@@ -1,0 +1,36 @@
+<div class="all-projects">
+	<h1>Projects</h1>
+	
+	<%= render 'projects/index_filter_form' %>
+
+	<% if @projects.empty? %>
+		<% if @category_name %>
+			<p>
+				<%= "There are no #{@category_name.pluralize(0)}." %>
+			</p>
+		<% end %>
+	<% else %>
+		<ul>
+			<% @projects.each do |project| %>
+				<li class="project">
+					<h3><%= link_to project.title, project %></h3>
+					<% if current_page?(:controller => 'projects', :action => 'index') %>
+							
+							<% if project.project_picture %>
+								<%= link_to image_tag(project.project_picture.image_url(:medium)), project%>
+							<% end %>
+
+					<% end %>
+					<% if current_page?(:controller => 'access', :action => 'index') %>
+						
+            <div class="admin-links">
+								<%= link_to "Edit", edit_project_path(project) %>
+								<%= link_to "Delete", project_path(project), data: {'confirm' => 'Are you sure?'}, :method => :delete %>
+						</div>
+          
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>

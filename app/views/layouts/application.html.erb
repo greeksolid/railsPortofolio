@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="wrapper clearfix">
+	<div class="wrapper">
+		<%= render 'layouts/sidebar' %>
 
-	<%= render 'layouts/header' %>	
-	
-	<div id="content">
-		<%= yield %>
+		<div id="content" class="clearfix <%= params[:controller] %>">
+			<% if flash[:notice] %>
+			<div class="notifications">
+					<i class="fa fa-info-circle"></i>
+					<%= flash[:notice] %>		
+			</div>
+		<% end %>
+
+		<% if flash[:error] %>
+			<div class="errors">
+					<i class="fa fa-minus-circle"></i>
+					<%= flash[:error] %>		
+			</div>
+		<% end %>
+
+			<%= yield %>
+		</div>
+
+		<div class="clearfix"></div>
+		
+		<%= render 'layouts/footer' %>
 	</div>
-	
-	<%= render 'layouts/footer' %>	
-
-</div>
-
-
-
 </body>
 </html>

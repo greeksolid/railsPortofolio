@@ -1,3 +1,64 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'sass_variables';
+
+#hero{
+	width: 100%;
+	text-align: center;
+
+	h1{
+		font-size: 15em;
+		text-shadow: 1px 1px 1px darken($dark-blue, 70%);
+		letter-spacing: -5px;
+	}
+
+	h2{
+		font-size: 6em;
+	}
+}
+
+#social-icons{
+	text-align: center;
+	margin: 2%;
+	padding: 2%;
+
+	img{
+		width: 10%;
+		height: 10%;
+		transition: all 0.2s;
+
+		&:hover{
+			-webkit-transform: scale(1.3);
+		}
+	}
+}
+
+#about-me{
+	padding: 2em;
+
+	.my-pic{
+		float: left;
+		width: 20%;
+		padding: 3%;
+	
+		img{
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			-webkit-transition: -webkit-transform 0.5s;
+			border: 10px solid #1BBC9B;
+			box-sizing: border-box;
+			
+			&:hover{
+				-webkit-transform: rotate(360deg);
+			}
+		}
+	}
+
+	p{
+		line-height: 2em;
+		font-size: 2em;
+	}
+}

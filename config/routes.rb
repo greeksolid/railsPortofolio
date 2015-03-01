@@ -1,9 +1,20 @@
 Portfolio::Application.routes.draw do
-  # get "projects/index",     as: 'projects'
-  resources :projects
+  root to: 'static_pages#home'
 
-  get "static_pages/home",  as: 'home'
-  get "static_pages/about", as: 'about'
+  resources :projects
+  resources :categories
+  resources :technologies
+
+  get "admin", :to => 'access#index'
+  get "login", :to => 'access#login'
+  get "logout", :to => 'access#logout'
+  post "attempt_login", :to =>'access#attempt_login'
+
+  # get "static_pages/home",  as: 'home'
+  # get "static_pages/about", as: 'about'
+
+  get "about", :to => "static_pages#about"
+
   # match '/about',   to: 'static_pages#about',   via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.

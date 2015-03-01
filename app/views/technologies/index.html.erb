@@ -1,0 +1,12 @@
+<div class="technologies">
+	<h1>Technologies</h1>
+		<% unless @technologies.empty? %>
+			<ul>
+				<% @technologies.each do |t| %>
+						<li><%= t.name %></li>
+				<% end %>
+			</ul>
+		<% else %>
+			<p>No technologies yet</p>
+		<% end %>
+</div>

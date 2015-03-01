@@ -1,25 +1,39 @@
-A new form has to go here
+<% provide(:title, 'New Project') %>
+<%= form_for :project, :html => {:multipart => true}, url: projects_path do |f| %>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</p>
 
-	<h3>Fields</h3>
+	<p>
+		<%= f.label :description %><br>
+		<%= f.text_area :description %>
+	</p>
 
-	<ul>
-		<li>Project Title</li>
-		<li>Project Description</li>
-		<li>Project Images</li>
-	</ul>
+	<p>
+		<%= f.label :category_id %><br>
+		<%= f.collection_select :category_id, Category.all, :id, :name %>
+	</p>
 
-	<%= form_for :project, url: projects_path do |f| %>
-		<p>
-			<%= f.label :title %><br>
-			<%= f.text_field :title %>
-		</p>
+	<p>
+		<%= f.file_field :project_picture %>
+	</p>
 
-		<p>
-			<%= f.label :description %><br>
-			<%= f.text_area :description %>
-		</p>
+	<p>
+		<%= f.fields_for :project_images do |image| %>
+	    <%= image.label :image %><br />
+	    <%= image.file_field :image, :multiple => true, name: "project_images[image][]" %>
+	  <% end %>
+	</p>
 
-		<p>
-			<%= f.submit %>
-		</p>
-	<% end %>
+	<p>
+		<% for technology in @technologies %>
+			<%= check_box_tag "project[technology_ids][]", technology.id %>
+			<%= technology.name %>
+		<% end %>
+	</p>
+		
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

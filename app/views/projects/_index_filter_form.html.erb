@@ -1,0 +1,6 @@
+<div class="filter">
+	<%= form_tag '', :method => :get do %>
+		<%= collection_select(:category, :category_id, Category.all, :id, :name, :include_blank => 'All Projects', :selected => @category_id) %>
+		<%= submit_tag 'Filter'%>
+	<% end %>
+</div>

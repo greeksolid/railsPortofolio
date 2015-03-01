@@ -33,7 +33,16 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
+
+# Rmagick for image manipulation
+gem "rmagick", "~>2.13.2", :require => 'RMagick'
+
+# Carrierwave for image uploading
+gem 'carrierwave'
+
+# Font Awesome for CSS icons
+gem "font-awesome-rails"
 
 # Use unicorn as the app server
 # gem 'unicorn'

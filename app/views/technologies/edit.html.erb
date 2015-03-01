@@ -1,0 +1,15 @@
+<% provide(:title, 'Edit Technology') %>
+
+<div class="technologies">
+	<h1>Edit Technology</h1>
+	<%= form_for :technology,  url: technology_path(@technology), method: :patch do |f| %>
+		<p>
+			<%= f.label :name %><br>
+			<%= f.text_field :name %>
+		</p>
+	
+		<p>
+			<%= f.submit %>
+		</p>
+	<% end %>
+</div>

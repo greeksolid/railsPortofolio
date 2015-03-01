@@ -1,0 +1,103 @@
+// Place all the styles related to the access controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'sass_variables';
+
+.access{
+
+	.all-projects, .categories, .technologies{
+		background-color: $c-gray;
+
+		h1{
+			text-align: center;
+      font-family: 'oswald-regular';
+		}
+    
+    ul{
+      list-style: none; 
+    }
+
+		li{
+      font-size: 2em;
+      padding: 1%;
+    
+			&:nth-child(odd){
+				background-color: lighten($c-gray, 10%);
+			}
+
+			&:nth-child(even){
+				background-color: lighten($c-gray, 20%);	
+			}
+      
+      h3{
+        width: 80%;
+        font-size: 1em;
+        display: inline-block;
+        
+        a{
+          color: inherit;
+        }
+      }
+      
+      .admin-links{
+        text-align: right;
+        width: 19%;
+        display: inline-block;
+        
+        a{
+          color: red; 
+        }
+      }
+			
+		}
+  }
+  
+}
+
+
+.admin-new-links{  
+  ul{
+   text-align: center; 
+  }
+  
+  li{
+    display: inline-block;
+    background-color: $c-gray;
+    padding: 1%; 
+    margin-right: 1%;
+    
+    &:last-child{
+      margin-right: 0; 
+    }
+    
+    a{
+      font-size: 2em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+  }
+}
+
+.login{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+  
+    input[type=text], input[type=password]{
+    }
+  
+    input[type=submit]{
+      font-size: 1.1em;
+      font-weight: bold;
+//      width: 100px;
+//      height: 100px;
+//      border: 5px solid $dark-blue;
+//      border-radius: 50%;
+      width: 100%;
+		}
+}
+
+
+

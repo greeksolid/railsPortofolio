@@ -11,14 +11,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409195757) do
+ActiveRecord::Schema.define(version: 20140505223820) do
+
+  create_table "admin_users", force: true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "project_images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+    t.integer  "project_id"
+  end
+
+  create_table "project_pictures", force: true do |t|
+    t.string   "image"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_pictures", ["project_id"], name: "index_project_pictures_on_project_id"
 
   create_table "projects", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "category"
+    t.integer  "category_id"
+  end
+
+  create_table "projects_technologies", id: false, force: true do |t|
+    t.integer "project_id"
+    t.integer "technology_id"
+  end
+
+  add_index "projects_technologies", ["project_id", "technology_id"], name: "index_projects_technologies_on_project_id_and_technology_id"
+
+  create_table "technologies", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
