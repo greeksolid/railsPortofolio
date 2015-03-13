@@ -1,0 +1,20 @@
+<div class="latest-projects clearfix">
+  
+  <h2>Featured Projects</h2>
+  
+  <ul>
+    <% @latest_projects.each do |project| %>
+        
+        <li class="project">
+            <!-- <h3><%= link_to project.title, project %></h3> -->
+            <% if project.project_picture %>
+                <%= link_to image_tag(project.project_picture.image_url(:medium)), project %>
+            <% end %>
+        </li>
+        
+    <% end %>
+  </ul>
+
+  <%= link_to "See all projects", projects_path, class: "view-all" %>
+
+</div>

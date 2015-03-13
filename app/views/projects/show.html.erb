@@ -1,28 +1,33 @@
 <% provide(:title, @project.title) %>
 
 <div class="project">
+  <div class="project-image">
+    <%= image_tag @project.project_picture.image.url %>
+  </div>
   <div class="project-details">
-    <div class="project-image">
-      <%= image_tag @project.project_picture.image.url %>
-    </div>
-
+  
     <div class="project-title">
       <%= @project.title %>
     </div>
     
     <div class="project-description">
-      <strong>Description:</strong>
-      <%= @project.description %>
+
+      <p>
+        <%= @project.description %>
+      </p>
+      
     </div>
 
     <div class="project-category">
-      <strong>Category:</strong>
+
       <%= @category.name %>
+
     </div>
 
     <% unless @technologies.empty? %>
+
       <div class="project-technology">
-        <strong>Technologies:</strong>
+        
         <ul class="technologies-tags">
           <% @technologies.each do |tech| %>
             <li>
@@ -30,7 +35,9 @@
             </li>
           <% end %>
         </ul>
+        
       </div>
+
     <% end %>
     
   </div>
@@ -38,7 +45,7 @@
   <div class="project-screenshots clearfix">
       <% @project_images.each do |image| %>
         <!-- <%= link_to image_tag(image.image_url(:medium)), image.image_url %> -->
-        <%= image_tag(image.image_url(:medium)) %> -
+        <%= image_tag(image.image_url) %>
       <% end %>
   </div>
 </div>

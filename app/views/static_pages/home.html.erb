@@ -1,13 +1,7 @@
 <% provide(:title, 'Home') %>
-<div id="cover">
-	<div id="hero">
-		<h1>Tasos <span class="geo">Geo</span>rgoulis</h1>
-		<h2>Junior Web Developer</h2>
-	</div>
-	<div id="social-icons">
-		<%= link_to image_tag('icons/fb.png'), 'http://www.facebook.com/greeksolid' %>
-		<%= link_to image_tag('icons/twitter.png'), 'http://www.facebook.com/greeksolid' %>
-		<%= link_to image_tag('icons/linkedin.png'), 'http://www.facebook.com/greeksolid' %>
-		<%= link_to image_tag('icons/rss.png'), 'http://www.facebook.com/greeksolid' %>
-	</div>
+<div id="hero">
+    <h1>Tasos Georgoulis</h1>
+    <h2>Junior Web Developer</h2>
 </div>
+
+<%= render 'projects/latest_projects' %>

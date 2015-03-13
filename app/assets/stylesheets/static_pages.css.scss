@@ -2,3 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'sass_variables';
+
+/**************************
+
+**************************/
+
+#about-me, #hero{
+    text-align: center;
+}
+
+#hero{
+
+    background-color: $orange;
+    padding: 100px;
+    color: $white;
+
+    h1{
+         font-size: 15em;
+         text-shadow: 2px 2px 1px $blue;
+         // color: red;
+    }
+
+    h2{
+        font-size: 10em;
+        // color: #FFF;
+    }
+}
+
+.latest-projects{
+
+    width: 100%;
+    padding: 50px;
+
+    h2{
+        font-size: 3em;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .project{
+        width: 33.33%;
+        padding: 20px;
+        float: left;
+
+        img{
+            width: 100%;
+        }
+
+    }
+
+    .view-all{
+        font-size: 1.5em;
+        border-bottom: 5px solid $c-gray;
+    }
+
+}
+
+/**************************
+
+**************************/

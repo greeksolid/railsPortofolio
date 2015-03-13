@@ -6,31 +6,15 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-	<div class="wrapper">
-		<%= render 'layouts/sidebar' %>
 
-		<div id="content" class="clearfix <%= params[:controller] %>">
-			<% if flash[:notice] %>
-			<div class="notifications">
-					<i class="fa fa-info-circle"></i>
-					<%= flash[:notice] %>		
-			</div>
-		<% end %>
+  <%= render 'layouts/header' %>
 
-		<% if flash[:error] %>
-			<div class="errors">
-					<i class="fa fa-minus-circle"></i>
-					<%= flash[:error] %>		
-			</div>
-		<% end %>
+  <div id="main">
+    <%= yield %>
+  </div>
 
-			<%= yield %>
-		</div>
-
-		<div class="clearfix"></div>
-		
-		<%= render 'layouts/footer' %>
-	</div>
 </body>
+
 </html>

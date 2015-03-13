@@ -1,7 +1,6 @@
-<div class="all-projects">
-	<h1>Projects</h1>
-	
-	<%= render 'projects/index_filter_form' %>
+
+<div class="all-projects <%= current_page?(:controller => 'projects') ? 'portfolio' : 'admin' %>">
+	<!-- <%= render 'projects/index_filter_form' %> -->
 
 	<% if @projects.empty? %>
 		<% if @category_name %>
@@ -10,6 +9,9 @@
 			</p>
 		<% end %>
 	<% else %>
+		<% if current_page?(:controller => 'access')  %>
+			<h1>Projects</h1>
+		<% end %>
 		<ul>
 			<% @projects.each do |project| %>
 				<li class="project">
@@ -17,16 +19,18 @@
 					<% if current_page?(:controller => 'projects', :action => 'index') %>
 							
 							<% if project.project_picture %>
-								<%= link_to image_tag(project.project_picture.image_url(:medium)), project%>
+								<%= link_to image_tag(project.project_picture.image_url()), project%>
 							<% end %>
 
 					<% end %>
 					<% if current_page?(:controller => 'access', :action => 'index') %>
 						
-            <div class="admin-links">
-								<%= link_to "Edit", edit_project_path(project) %>
-								<%= link_to "Delete", project_path(project), data: {'confirm' => 'Are you sure?'}, :method => :delete %>
-						</div>
+		            <div class="admin-links">
+						<%= link_to "Edit", edit_project_path(project), class: 'edit-button' %>
+						<%= link_to "Delete", project_path(project), 
+						data: {'confirm' => 'Are you sure?'}, 
+						:method => :delete, class: 'delete-button' %>
+					</div>
           
 					<% end %>
 				</li>

@@ -3,3 +3,98 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'sass_variables';
+
+/**************
+Index Action
+**************/
+
+.filter{
+    text-align: right;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.all-projects.portfolio{
+
+    .project{
+        width: 50%;
+        position: relative;
+        float: left;
+
+        h3{
+            background-color: rgba(0,0,0,0.5);
+            font-size: 40px;
+            position: absolute;
+            padding: 25px 50px;
+            bottom: 50px;
+            right: 50px;
+
+            a{
+                color: #FFF;
+            }
+        }
+
+        &:first-child{
+            float: none;
+            width: 100%;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}
+
+
+
+/**************
+/Index Action
+**************/
+
+
+/***********
+Show Action
+***********/
+
+.project{
+
+    img{
+        width: 100%;
+    }
+
+}
+
+
+.project-details{
+
+    width: 60%;
+    margin: 0 auto;
+
+    .project-title{
+        font-size: 10em;
+    }
+
+    .project-category{
+        font-size: 1em;
+    }
+
+    .technologies-tags{
+
+        li{
+            display: inline-block;
+            padding: 10px;
+            margin: 20px 20px 20px 0;
+            font-size: 2em;
+            border-bottom: 5px solid $orange;
+        }
+
+    }
+
+}
+
+
+/**************
+/Show Action
+**************/

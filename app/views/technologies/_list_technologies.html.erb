@@ -6,8 +6,8 @@
           <li class="technology">
             <h3><%= technology.name %></h3>
             <div class="admin-links">
-                <%= link_to "Edit", edit_technology_path(technology) %>
-                <%= link_to "Delete", technology_path(technology), data: {'confirm' => 'Are you sure?'}, :method => :delete %>
+                <%= link_to "Edit", edit_technology_path(technology), class: 'edit-button' %>
+                <%= link_to "Delete", technology_path(technology), data: {'confirm' => 'Are you sure?'}, :method => :delete, class: 'delete-button' %>
             </div>
           </li>
       <% end %>

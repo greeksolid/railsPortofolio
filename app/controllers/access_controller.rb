@@ -5,10 +5,10 @@ class AccessController < ApplicationController
 	def index
 		filter_projects
 
-    @categories   = Category.all
-    @technologies = Technology.all.order(:name)
+	    @categories   = Category.all
+	    @technologies = Technology.all.order(:name)
 
-    render 'projects/index'
+	    render 'projects/index'
 	end
 
 	def login

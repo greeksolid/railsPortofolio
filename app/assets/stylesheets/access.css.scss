@@ -3,3 +3,81 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'sass_variables';
+
+.admin-new-links{
+
+    background-color: $orange;
+
+    ul{
+        text-align: center;
+    }
+
+    li{
+        display: inline-block;
+        padding-right: 10px;
+    }
+
+    a{
+        display: block;
+        font-size: 2em;
+        background-color: $white;
+        color: $blue;
+        padding: 5px;
+        margin: 5px;
+    }
+
+}
+
+.all-projects.admin, .categories, .technologies{
+
+    background-color: #fff;
+    width: 33.33%;
+    padding: 50px;
+    min-height: 500px;
+    float: left;
+
+    h1{
+        font-size: 4em;
+    }
+
+    h3{
+        font-size: 2em;
+    }
+
+    .project, .category, .technology{
+        border-bottom: 1px solid $blue;
+        padding: 10px;
+        margin: 10px;
+
+        h3, .admin-links{
+            display: inline-block;
+        }
+
+        .admin-links{
+            
+            // float: right;
+            
+            a{
+                padding-right: 5px;
+            }
+
+        }
+    }
+
+}
+
+.admin-links{
+
+    a{
+        font-size: 1.7em;
+    }
+
+    .edit-button{
+        color: green;
+    }
+
+    .delete-button{
+        color: red;
+    }
+
+}
