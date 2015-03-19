@@ -18,6 +18,12 @@ html{
 	font-size: 16px;
 }
 
+html.turbolinks-progress-bar::before {
+  background-color: $orange !important;
+  height: 5px !important;
+  z-index: 2000;
+}
+
 body{
 	font-size: 62.5%;
 	font-family: 'opensans-regular';
@@ -98,6 +104,7 @@ header{
     width: 100%;
     height: 50px;
     padding: 20px;
+    margin-bottom: 50px;
 
     .logo, nav{
         display: inline-block;
@@ -133,11 +140,6 @@ header{
 
 #main{
     background: url("bg.png");
-    // background-color: pink;
-    // position: absolute;
-    // top: 50px;
-    // bottom: 0;
     width: 100%;
     margin: 0 auto;
-    padding: 50px 0;
 }

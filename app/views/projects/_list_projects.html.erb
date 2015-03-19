@@ -19,7 +19,7 @@
 					<% if current_page?(:controller => 'projects', :action => 'index') %>
 							
 							<% if project.project_picture %>
-								<%= link_to image_tag(project.project_picture.image_url()), project%>
+								<%= link_to image_tag(project.project_picture.image_url()), project %>
 							<% end %>
 
 					<% end %>

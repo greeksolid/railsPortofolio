@@ -59,6 +59,14 @@
 
 }
 
+// Used to center the project div before animating
+// so the animation can start from the center of the window
+.center-project{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+}
+
 /**************************
 
 **************************/

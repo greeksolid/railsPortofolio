@@ -57,6 +57,11 @@ class ProjectsController < ApplicationController
 
     # get the technologies names
     @technologies = @project.technologies.map(&:name)
+
+    respond_to do |format|
+      format.html
+      format.js { render 'test' }
+    end
   end
 
   def destroy
