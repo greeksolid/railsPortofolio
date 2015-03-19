@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require_tree .
+
+$(document).on('page:fetch', function(){
+    Turbolinks.enableProgressBar();
+});
