@@ -40,14 +40,13 @@ Index Action
         }
 
         img{
+            display: block;
             width: 100%;
             height: auto;
         }
     }
 
 }
-
-
 
 /**************
 /Index Action
@@ -58,19 +57,21 @@ Index Action
 Show Action
 ***********/
 
-.project{
+.project .header{
 
     img{
         width: 100%;
+        height: 100vh;
+    }
+
+    h1{
+        background-color: pink;
+        color: $blue;
     }
 
 }
 
-
 .project-details{
-
-    width: 60%;
-    margin: 0 auto;
 
     .project-title{
         font-size: 10em;
@@ -92,45 +93,55 @@ Show Action
 
     }
 
+    .project-screenshots{
+
+        img{
+            display: block;
+            width: 100%;
+        }
+
+    }
+
+
 }
 
 // Show Animations
 
 .projects-show #main{
-    -webkit-animation: fadein 0.3s; /* Safari, Chrome and Opera > 12.1 */
-   -moz-animation: fadein 0.3s; /* Firefox < 16 */
-    -ms-animation: fadein 0.3s; /* Internet Explorer */
-     -o-animation: fadein 0.3s; /* Opera < 12.1 */
-        animation: fadein 0.3s;
+    -webkit-animation: fadein 0.7s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadein 0.7s; /* Firefox < 16 */
+    -ms-animation: fadein 0.7s; /* Internet Explorer */
+     -o-animation: fadein 0.7s; /* Opera < 12.1 */
+        animation: fadein 0.7s;
 }
 
 @keyframes fadein {
-    from { opacity: 0; width: 10px; height:10px; }
-    to   { opacity: 1; width: 100%; height: auto;}
+    from { opacity: 0; width: 10px; height: 10px; }
+    to   { opacity: 1; width: 100%; height: auto; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { opacity: 0; width: 10px; height:10px; }
-    to   { opacity: 1; width: 100%; height: auto;}
+    from { opacity: 0; width: 10px; height: 10px; }
+    to   { opacity: 1; width: 100%; height: auto; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from {  width: 10px; height:10px; }
-    to   {  width: 100%; height: auto;}
+    from {  width: 10px; height: 10px; }
+    to   {  width: 100%; height: auto; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { opacity: 0; width: 10px; height:10px; }
-    to   { opacity: 1; width: 100%; height: auto;}
+    from { opacity: 0; width: 10px; height: 10px; }
+    to   { opacity: 1; width: 100%; height: auto; } 
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-    from { opacity: 0; width: 10px; height:10px; }
-    to   { opacity: 1; width: 100%; height: auto;}
+    from { opacity: 0; width: 10px; height: 10px; }
+    to   { opacity: 1; width: 100%; height: auto; }
 }
 
 

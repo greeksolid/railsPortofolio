@@ -9,7 +9,6 @@
 **************************/
 
 #about-me, #hero{
-    text-align: center;
 }
 
 #hero{
@@ -17,17 +16,19 @@
     background-color: $orange;
     padding: 100px;
     color: $white;
+    text-align: center;
 
     h1{
          font-size: 15em;
          text-shadow: 2px 2px 1px $blue;
-         // color: red;
     }
 
     h2{
         font-size: 10em;
-        // color: #FFF;
     }
+}
+
+#about-me{
 }
 
 .latest-projects{

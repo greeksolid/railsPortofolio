@@ -1,17 +1,16 @@
 <% provide(:title, @project.title) %>
 
 <div class="project">
-
-  <div class="project-image">
-    <%= image_tag @project.project_picture.image.url %>
-  </div>
   
-  <div class="project-details">
-  
-    <div class="project-title">
+  <div class="header">
+    <%= image_tag @project.project_picture.image.url, class: "project-image" %>
+    <h1 class="project-title">
       <%= @project.title %>
-    </div>
-    
+    </h1>
+  </div>
+
+  <div class="project-details center">
+
     <div class="project-description">
 
       <p>
@@ -41,16 +40,17 @@
       </div>
 
     <% end %>
-    
-  </div>
 
-  <div class="project-screenshots clearfix">
-      
+    <div class="project-screenshots">
+
       <% @project_images.each do |image| %>
-        <!-- <%= link_to image_tag(image.image_url(:medium)), image.image_url %> -->
         <%= image_tag(image.image_url) %>
       <% end %>
 
+    </div>
+    
   </div>
+
+  
 
 </div>
