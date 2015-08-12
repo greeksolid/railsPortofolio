@@ -10,8 +10,25 @@
 	<%= render 'access/admin_new_links' %>
 <% end %>
 
-<%# Display all the projects %>
-<%= render 'projects/list_projects' %>
+
+<% unless current_page?(:controller => 'access', :action => 'index') %>
+    <div class="sidebar">
+        <div class="hero">
+            <div class="title">
+                <h1>All Projects</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <%# Display all the projects %>
+            <%= render 'projects/list_projects' %>
+        </div>
+    </div>
+<% end %>
+
+
 
 <%# Display all the categories if on admin panel %>
 <% if current_page?(:controller => 'access', :action => 'index') %>

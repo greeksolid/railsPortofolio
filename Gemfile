@@ -14,7 +14,7 @@ group :production do
 end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'turbolinks', '2.5.1'
 
+# Fixes $(document).ready problem with turbolinks
+gem 'jquery-turbolinks'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -47,8 +50,8 @@ gem "rmagick", "~>2.13.2", :require => 'RMagick'
 # Carrierwave for image uploading
 gem 'carrierwave'
 
-# Font Awesome for CSS icons
-gem "font-awesome-rails"
+# Twitter Bootstrap 3
+#gem 'bootstrap-sass'
 
 # Use unicorn as the app server
 # gem 'unicorn'

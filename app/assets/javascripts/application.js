@@ -11,10 +11,19 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$(document).on('page:fetch', function(){
-    Turbolinks.enableProgressBar();
+$(document).ready(function() {
+  
+  Turbolinks.enableProgressBar();
+
+  // Display navigation menu and change icon
+  $(".nav-button").on('click', function() {
+    $("nav").toggle(200);
+    $(".nav-button").toggleClass("nav-icon close-icon");
+  });
+
 });

@@ -3,3 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'sass_variables';
+
+
+.hero{
+
+    h1{
+        // font-size: 121.5px;
+        font-size: 5.063em;
+        // color: $lightgold;
+        // background-color: $orange;
+        text-transform: uppercase;
+        color: $browngold;
+        font-weight: uppercase;
+    }
+}
+
+    .title{
+        border-bottom: 3px solid $lightgold;
+    }
+
+    .web{
+        // font-size: 2em;
+    }
+

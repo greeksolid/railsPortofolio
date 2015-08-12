@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 		      @projects = Project.all.where(:category_id => @category_id)
 		    else
 		      # if empty or nil
-		      @projects = Project.all
+		      @projects = Project.find(:all, order: "id desc")
 		    end
 		end
 end

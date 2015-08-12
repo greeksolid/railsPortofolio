@@ -19,46 +19,69 @@ Show Action
 ***********/
 
 
-// Show Animations
-
-.projects-show #main{
-    -webkit-animation: fadein 0.7s; /* Safari, Chrome and Opera > 12.1 */
-   -moz-animation: fadein 0.7s; /* Firefox < 16 */
-    -ms-animation: fadein 0.7s; /* Internet Explorer */
-     -o-animation: fadein 0.7s; /* Opera < 12.1 */
-        animation: fadein 0.7s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; width: 10px; height: 10px; }
-    to   { opacity: 1; width: 100%; height: auto; }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; width: 10px; height: 10px; }
-    to   { opacity: 1; width: 100%; height: auto; }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from {  width: 10px; height: 10px; }
-    to   {  width: 100%; height: auto; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; width: 10px; height: 10px; }
-    to   { opacity: 1; width: 100%; height: auto; } 
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-    from { opacity: 0; width: 10px; height: 10px; }
-    to   { opacity: 1; width: 100%; height: auto; }
-}
-
 
 /**************
-/Show Action
+Latest Projects
 **************/
+.content-wrapper{
+    // background-color: red;
+
+    .content{
+        // background-color: yellow;
+        // padding: 5%;
+    }
+}
+
+.projects{
+    // width: 100%;
+    // background-color: pink;
+    // padding: 50px;
+    
+    ul { list-style-type: none; }
+}
+
+.project{
+        font-size: 1.5em;
+        display: inline-block;
+        position: relative;
+        width: 46%;
+        padding-bottom: 46%;
+        // margin: -3px; // whitespace fix
+        margin: 2%;
+        // margin-right: 5%;
+        background-color: white;
+        overflow:hidden;
+        transition: background-color .5s;
+        border: 10px solid $browngold;
+
+        &:hover{
+            background-color: $darkbrown;
+
+            a {
+                color: $browngold;
+            }
+        }
+
+        .project-content {
+            position:absolute;
+            height:100%;
+            width:100%; 
+            
+            padding: 10% 5%;
+            text-align: center; // center text horizontally
+
+            // center text vertically
+            .table{
+            display:table;
+            height:100%;
+            width:100%;
+            }
+            .table-cell{
+                display:table-cell;
+                vertical-align:middle;
+                height:100%;
+                width:100%;
+            }
+        }
+
+    }

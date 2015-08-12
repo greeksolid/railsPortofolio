@@ -1,6 +1,4 @@
-<div class="latest-projects">
-  
-  <!-- <h2>Latest Projects</h2> -->
+<div class="latest-projects clearfix">
   
   <ul>
     <% @latest_projects.each do |project| %>
@@ -8,6 +6,5 @@
     <% end %>
   </ul>
 
-  <%= link_to "View all projects", projects_path, class: "view-all" %>
-
 </div>
+<!-- <%= link_to "View all projects", projects_path, class: "view-all" %> -->

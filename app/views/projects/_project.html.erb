@@ -1,6 +1,1 @@
-<li class="project">
-    <h3><%= link_to project.title, project %></h3>
-    <% if project.project_picture %>
-        <%= link_to image_tag(project.project_picture.image_url(:medium)), project %>
-    <% end %>
-</li>
+<li class="project"><div class="project-content"><div class="table"><div class="table-cell"><%= link_to project.title, project %></div></div></div></li>

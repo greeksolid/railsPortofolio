@@ -1,55 +1,45 @@
 <% provide(:title, @project.title) %>
 
-<div class="project">
-  
-  <div style="<%= project_picture_bg %>" class="header">
-    <h1 class="project-title">
-      <%= @project.title %>
-    </h1>
-  </div>
+<div class="sidebar">
+	<div class="hero">
+		<div class="title">
+			<h1><%= @project.title %></h1>
+		</div>
+	</div>
+</div>
 
-  <div class="project-details center">
+<div class="content-wrapper">
+	<div class="content">
+		<div class="project-details">
+			<div class="project-description">
+				<p>
+					<%= @project.description %>
+				</p>
+			</div>
+		
+			<div class="project-category">
+				<%= @category.name %>
+			</div>
 
-    <div class="project-description">
+			<% unless @technologies.empty? %>
 
-      <p>
-        <%= @project.description %>
-      </p>
-      
-    </div>
+				<div class="project-technology">
+					<ul class="technologies-tags">
+						<% @technologies.each do |tech| %>
+							<li>
+								<%= tech %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
 
-    <div class="project-category">
+			<% end %>
 
-      <%= @category.name %>
-
-    </div>
-
-    <% unless @technologies.empty? %>
-
-      <div class="project-technology">
-        
-        <ul class="technologies-tags">
-          <% @technologies.each do |tech| %>
-            <li>
-              <%= tech %>
-            </li>
-          <% end %>
-        </ul>
-        
-      </div>
-
-    <% end %>
-
-    <div class="project-screenshots">
-
-      <% @project_images.each do |image| %>
-        <%= image_tag(image.image_url) %>
-      <% end %>
-
-    </div>
-    
-  </div>
-
-  
-
+			<div class="project-screenshots">
+				<% @project_images.each do |image| %>
+					<%= image_tag(image.image_url) %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
